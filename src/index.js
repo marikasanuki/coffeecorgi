@@ -1,7 +1,7 @@
 import './styles/index.scss';
-import BiggoRight from "./biggo-right";
-import BiggoLeft from "./biggo-left";
-import BiggoButt from "./biggo-butt";
+import BiggoRight from "./scripts/biggo-right";
+import BiggoLeft from "./scripts/biggo-left";
+import BiggoButt from "./scripts/biggo-butt";
 
 document.addEventListener("DOMContentLoaded", function () {
     const canvasEle = document.getElementById('cc-cafe');
@@ -14,7 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let biggoLeft = new BiggoLeft(ctx, canvasEle);
     let biggoButt = new BiggoButt(ctx, canvasEle);
 
+    setInterval(() => {
+        biggoRight.move();
+        // ctx.clearBiggo(0,0,)
+    }, 20);
 
+
+
+    // debugger;
     // ctx.fillStyle = "purple";
     // ctx.fillRect(0, 0, 1000, 800);
 
