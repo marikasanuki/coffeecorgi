@@ -1,10 +1,30 @@
 import './styles/index.scss';
-
+import BiggoRight from "./biggo-right";
+import BiggoLeft from "./biggo-left";
+import BiggoButt from "./biggo-butt";
 
 document.addEventListener("DOMContentLoaded", function () {
-    const canvas = document.getElementById('cc-cafe');
-    const ctx = canvas.getContext('2d');
+    const canvasEle = document.getElementById('cc-cafe');
+    canvasEle.width = 1000;
+    canvasEle.height = 800;
+
+    const ctx = canvasEle.getContext('2d');
+
+    let biggoRight = new BiggoRight(ctx, canvasEle);
+    let biggoLeft = new BiggoLeft(ctx, canvasEle);
+    let biggoButt = new BiggoButt(ctx, canvasEle);
 
 
-    
+    // ctx.fillStyle = "purple";
+    // ctx.fillRect(0, 0, 1000, 800);
+
+    // ctx.beginPath();
+    // ctx.arc(100, 100, 20, 0, 2 * Math.PI, true);
+    // ctx.strokeStyle = "green";
+    // ctx.lineWidth = 5;
+    // ctx.stroke();
+    // ctx.fillStyle = "blue";
+    // ctx.fill();
+    console.log("Webpack is working!")
+
 });
