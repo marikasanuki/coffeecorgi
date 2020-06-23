@@ -2,6 +2,7 @@ import './styles/index.scss';
 import BiggoRight from "./scripts/biggo-right";
 import BiggoLeft from "./scripts/biggo-left";
 import BiggoButt from "./scripts/biggo-butt";
+import Cafe from "./scripts/cafe";
 
 document.addEventListener("DOMContentLoaded", function () {
     const canvasEle = document.getElementById('cc-cafe');
