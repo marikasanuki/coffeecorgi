@@ -10,7 +10,7 @@ class BiggoLeft {
         let biggoLeftPath = "src/images/corgi-left.png";
         let biggoLeft = new Image();
         biggoLeft.src = biggoLeftPath;
-        biggoLeft.onload = function () {
+        biggoLeft.onload = () => {
         ctx.drawImage(biggoLeft, x, y, 400, 400 * biggoLeft.height / biggoLeft.width);
         };
 

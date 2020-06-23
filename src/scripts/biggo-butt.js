@@ -10,7 +10,7 @@ class BiggoButt {
         let biggoButtPath = "src/images/corgi-butt.png";
         let biggoButt = new Image();
         biggoButt.src = biggoButtPath;
-        biggoButt.onload = function () {
+        biggoButt.onload = () => {
         ctx.drawImage(biggoButt, x, y, 300, 300 * biggoButt.height / biggoButt.width);
         };
 

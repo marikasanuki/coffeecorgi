@@ -11,7 +11,7 @@ class BiggoRight {
         let biggoRightPath = "src/images/corgi-right.png";
         let biggoRight = new Image();
         biggoRight.src = biggoRightPath;
-        biggoRight.onload = function () {
+        biggoRight.onload = () => {
             ctx.drawImage(biggoRight, x, y, 400, 400 * biggoRight.height / biggoRight.width);
         };
     }
