@@ -6,7 +6,7 @@ class BiggoButt {
         this.canvasEle = canvasEle;
 
         let x = 0;
-        let y = 300;
+        let y = 250;
         let biggoButtPath = "src/images/corgi-butt.png";
         let biggoButt = new Image();
         biggoButt.src = biggoButtPath;
