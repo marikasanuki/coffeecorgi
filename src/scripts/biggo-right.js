@@ -4,15 +4,15 @@ class BiggoRight {
         this.ctx = ctx;
         this.canvasEle = canvasEle;
 
-        this.pos = [0,0];
+        // this.pos = [0,0];
 
-        let x = 0;
-        let y = 0;
+        let x = -500;
+        let y = 150;
         let biggoRightPath = "src/images/corgi-right.png";
         let biggoRight = new Image();
         biggoRight.src = biggoRightPath;
         biggoRight.onload = function () {
-            ctx.drawImage(biggoRight, x, y);
+            ctx.drawImage(biggoRight, x, y, 400, 400 * biggoRight.height / biggoRight.width);
         };
     }
 
@@ -20,7 +20,7 @@ class BiggoRight {
         this.ctx.moveTo(x, y);
     }
 
-    clearclearBiggo(){}
+    clearBiggo(){}
     
 
 }

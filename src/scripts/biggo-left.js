@@ -11,7 +11,7 @@ class BiggoLeft {
         let biggoLeft = new Image();
         biggoLeft.src = biggoLeftPath;
         biggoLeft.onload = function () {
-        ctx.drawImage(biggoLeft, x, y);
+        ctx.drawImage(biggoLeft, x, y, 400, 400 * biggoLeft.height / biggoLeft.width);
         };
 
 
