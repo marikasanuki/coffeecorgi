@@ -3,8 +3,20 @@ class Cup {
     constructor(ctx, canvasEle){
         this.ctx = ctx;
         this.canvasEle = canvasEle;
+        // this.posX = 400;
+        // this.posY = 50;
+        // ctx.translate(550, 0);
+        this.drawCup(ctx);
+    }
 
-        ctx.translate(130, 10);
+
+    createCupIndex() {
+
+    }
+
+    drawCup(ctx, posX, posY) {
+        ctx.translate(posX, posY);
+        // ctx.translate(250, 10);
 
         // 	top inner black ring
         ctx.save();
@@ -64,13 +76,6 @@ class Cup {
         ctx.restore();
     }
 
-    drawCup() {
-
-    }
-
-    createCupIndex() {
-
-    }
 };
 
 export default Cup; 

@@ -1,7 +1,7 @@
 class BiggoLeft {
 
     constructor(ctx, canvasEle) {
-
+        ctx.translate(0, 0);
         this.ctx = ctx;
         this.canvasEle = canvasEle;
 
@@ -11,7 +11,7 @@ class BiggoLeft {
         let biggoLeft = new Image();
         biggoLeft.src = biggoLeftPath;
         biggoLeft.onload = () => {
-        ctx.drawImage(biggoLeft, x, y, 400, 400 * biggoLeft.height / biggoLeft.width);
+        ctx.drawImage(biggoLeft, x, y, 300, 300 * biggoLeft.height / biggoLeft.width);
         };
 
 

@@ -12,7 +12,7 @@ class BiggoRight {
         let biggoRight = new Image();
         biggoRight.src = biggoRightPath;
         biggoRight.onload = () => {
-            ctx.drawImage(biggoRight, x, y, 400, 400 * biggoRight.height / biggoRight.width);
+            ctx.drawImage(biggoRight, x, y, 300, 300 * biggoRight.height / biggoRight.width);
         };
     }
 
