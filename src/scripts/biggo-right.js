@@ -4,21 +4,42 @@ class BiggoRight {
         this.ctx = ctx;
         this.canvasEle = canvasEle;
 
-        // this.pos = [0,0];
+        this.moveRight = this.moveRight.bind(this);
+        this.x = -500;
+        this.y = 150;
 
-        let x = -500;
-        let y = 150;
+
+    }
+    
+    // debugger;
+    // this.ctx.fillStyle = "red";
+    // this.ctx.fillRect(-500, -50, this.canvasEle.width, this.canvasEle.height);
+
+    moveRight() {
+        console.log("animation test")
+     
         let biggoRightPath = "src/images/corgi-right.png";
         let biggoRight = new Image();
         biggoRight.src = biggoRightPath;
         biggoRight.onload = () => {
-            ctx.drawImage(biggoRight, x, y, 300, 300 * biggoRight.height / biggoRight.width);
+            this.ctx.drawImage(biggoRight, this.x, this.y, 300, 300 * biggoRight.height / biggoRight.width);
+            
         };
+        this.x += 2;
+        // debugger
+
+        
+        // requestAnimationFrame(this.moveRight);
+
+        // this.ctx.clearRect(-500, -50, this.canvasEle.width, 400); 
     }
 
-    move(x, y){
-        this.ctx.moveTo(x, y);
-    }
+    // debugger;
+    // this.ctx.save();
+    // this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+            // this.ctx.clearRect(-500, -50, this.canvasEle.width, 400); 
+    // this.ctx.restore();
+
 
     clearBiggo(){}
     

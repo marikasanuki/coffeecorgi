@@ -1,6 +1,6 @@
 import './styles/index.scss';
 import Cafe from "./scripts/cafe";
-import Bean from "./scripts/bean";
+
 
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -1,6 +1,6 @@
 import BiggoRight from "./biggo-right";
 import BiggoLeft from "./biggo-left";
-import BiggoButt from "./biggo-butt";
+import BiggoFront from "./biggo-front";
 import Cup from "./cup";
 import Bean from "./bean";
 
@@ -19,23 +19,22 @@ class Cafe {
 
         console.log(sortedArray);
 
-
         this.numCups = 10;
 
+        const biggoRight = new BiggoRight(ctx, canvasEle);
+        biggoRight.moveRight();
+        // const biggoLeft = new BiggoLeft(ctx, canvasEle);
+        const biggoFront = new BiggoFront(ctx, canvasEle);
 
         ctx.translate(0, 100);
         this.placeCups(ctx, canvasEle);
         ctx.translate(-850, 50);
         this.placeCups(ctx, canvasEle);
         ctx.translate(-500, -650);
-        const biggoRight = new BiggoRight(ctx, canvasEle);
-
-        // const biggoLeft = new BiggoLeft(ctx, canvasEle);
-        // const biggoButt = new BiggoButt(ctx, canvasEle);
-
+        ctx.restore();
 
         setInterval(() => {
-            biggoRight.move();
+            // biggoRight.move();
             // ctx.clearBiggo(0,0,)
         }, 20);
 
@@ -67,7 +66,7 @@ class Cafe {
                 //allCups[i].drawCup(ctx, -100, 50);
             //}
         }
-
+        ctx.restore();
     }
 
     placeTrays(){

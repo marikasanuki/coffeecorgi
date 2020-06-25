@@ -1,3 +1,5 @@
+import Bean from "./bean";
+
 class Cup {
 
     constructor(ctx, canvasEle){
@@ -11,7 +13,7 @@ class Cup {
 
 
     createCupIndex() {
-
+        
     }
 
     drawCup(ctx, posX, posY) {
