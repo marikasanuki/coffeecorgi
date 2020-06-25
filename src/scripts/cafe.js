@@ -22,8 +22,10 @@ class Cafe {
         this.numCups = 10;
 
         const biggoRight = new BiggoRight(ctx, canvasEle);
-        biggoRight.moveRight();
-        // const biggoLeft = new BiggoLeft(ctx, canvasEle);
+        // biggoRight.moveRight();
+        const biggoLeft = new BiggoLeft(ctx, canvasEle);
+        // biggoLeft.moveLeft();
+
         const biggoFront = new BiggoFront(ctx, canvasEle);
 
         ctx.translate(0, 100);

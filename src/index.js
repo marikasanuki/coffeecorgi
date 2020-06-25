@@ -10,8 +10,4 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx = canvasEle.getContext('2d');
     
     const caf = new Cafe(ctx, canvasEle);
-
-
-    console.log("Webpack is working!")
-
 });
