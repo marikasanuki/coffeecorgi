@@ -6,9 +6,9 @@ class BiggoFront {
         this.canvasEle = canvasEle;
 
         let x = 0;
-        let y = 650;
+        let y = 700;
 
-        let size = 150;
+        let size = 120;
 
 
         let biggoButtPath = "src/images/corgi-butt.png";
@@ -42,6 +42,9 @@ class BiggoFront {
 
 
     }
+
+
+
 
 
 

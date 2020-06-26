@@ -4,14 +4,16 @@ import BiggoFront from "./biggo-front";
 import Cup from "./cup";
 import Bean from "./bean";
 
+        // 1) on submit
+        // 2) call biggoLeft.moveLeft();
+        // 3) call biggoRight.moveRight();
+
 class Cafe {
     constructor(ctx, canvasEle) {
         this.ctx = ctx;
         this.canvasEle = canvasEle;
         this.numCups = 10;
-        // 1) on submit
-        // 2) call biggoLeft.moveLeft();
-        // 3) call biggoRight.moveRight();
+
         const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
 
         const biggoLeft = new BiggoLeft(this.ctx, this.canvasEle);
@@ -20,12 +22,7 @@ class Cafe {
         const biggoRight = new BiggoRight(this.ctx, this.canvasEle);
         setTimeout(() => {
             biggoRight.moveRight();
-        }, 5000);
-
-
-        
-
-
+        }, 4500);
 
         this.ctx.translate(0, 100);
         this.placeCups(this.ctx, this.canvasEle);
@@ -34,7 +31,6 @@ class Cafe {
         this.ctx.translate(-500, -650);
         this.ctx.restore();
         this.placeBeans(this.ctx, this.canvasEle, 365);
-        // this.ctx.translate(0, 100);
         this.placeBeans(this.ctx, this.canvasEle, 635);
 
         // this.onSubmit.addEventListener('click', () => {
@@ -63,9 +59,7 @@ class Cafe {
             allBeans[i].drawBean(ctx, x, y);
             x += 156;
         }
-
-        // debugger
-        ctx.restore();
+        // ctx.restore();
 
         // const beantest = new Bean(this.ctx, this.canvasEle)
         // beantest.drawBean(ctx, 100, 150);
