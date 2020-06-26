@@ -23,15 +23,6 @@ class Cafe {
         }, 5000);
 
 
-        const beantest = new Bean(this.ctx, this.canvasEle)
-        beantest.drawBean(ctx, 100, 150);
-
-        const sortedArray = beantest.randomizedNums(12);
-        this.ctx.font = '14px Rubik';
-        this.ctx.fillStyle = "rgb(58, 24, 24)";
-        this.ctx.fillText('Menu (sorted array): [' + sortedArray + ']', 150, 20);
-        console.log(sortedArray);
-
         
 
 
@@ -42,7 +33,9 @@ class Cafe {
         this.placeCups(this.ctx, this.canvasEle);
         this.ctx.translate(-500, -650);
         this.ctx.restore();
-
+        this.placeBeans(this.ctx, this.canvasEle, 365);
+        // this.ctx.translate(0, 100);
+        this.placeBeans(this.ctx, this.canvasEle, 635);
 
         // this.onSubmit.addEventListener('click', () => {
         //     this.submit-button
@@ -59,7 +52,30 @@ class Cafe {
     //     this.ctx.fillText(beantest.randomizedNums(12))
     // }
 
+    placeBeans(ctx, canvasEle, y) {
+        // ctx.translate(100, 200);
+        const soloBean = new Bean(ctx, canvasEle);
+        let allBeans = [];
+        let x = -280;
+        for (let i = 0; i < 6; i++) {
 
+            allBeans.push(soloBean);
+            allBeans[i].drawBean(ctx, x, y);
+            x += 156;
+        }
+
+        // debugger
+        ctx.restore();
+
+        // const beantest = new Bean(this.ctx, this.canvasEle)
+        // beantest.drawBean(ctx, 100, 150);
+
+        // const sortedArray = beantest.randomizedNums(12);
+        // this.ctx.font = '14px Rubik';
+        // this.ctx.fillStyle = "rgb(58, 24, 24)";
+        // this.ctx.fillText('Menu (sorted array): [' + sortedArray + ']', 150, 20);
+        // console.log(sortedArray);
+    }
 
     placeCups(ctx, canvasEle) {
         ctx.translate(100, 200);
@@ -86,20 +102,7 @@ class Cafe {
         ctx.restore();
     }
 
-    placeBeans(ctx, canvasEle) {
-        const soloBean = new Bean(ctx, canvasEle);
-        let allBeans = [];
-        for (let i = 0; i < this.numCups; i++) {
 
-            allBeans.push(soloBean);
-
-            if (i < (this.numCups / 2)) {
-                allBeans[i].drawBean(ctx, 150, 0);
-            } 
-        }
-        ctx.restore();
-
-    }
 
     placeTrays() {
 

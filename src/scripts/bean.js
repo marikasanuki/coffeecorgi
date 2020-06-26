@@ -4,8 +4,6 @@ class Bean {
         this.randomizedNums = this.randomizedNums.bind(this);
         this.ctx = ctx;
         this.canvasEle = canvasEle;
-   
-
 
     }
 
