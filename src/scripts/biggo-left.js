@@ -1,9 +1,9 @@
 class BiggoLeft {
 
     constructor(ctx, canvasEle) {
-        ctx.translate(0, 0);
         this.ctx = ctx;
         this.canvasEle = canvasEle;
+        // this.ctx.translate(0, 0);
 
         this.moveLeft = this.moveLeft.bind(this);
         this.x = 950;
