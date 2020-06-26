@@ -18,6 +18,7 @@ class Cup {
 
     drawCup(ctx, posX, posY) {
         ctx.translate(posX, posY);
+        ctx.strokeStyle = "rgb(58, 24, 24)";
         // ctx.translate(250, 10);
 
 

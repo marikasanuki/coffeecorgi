@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     canvasEle.width = 1300;
     canvasEle.height = 700;
     const ctx = canvasEle.getContext('2d');
-    
+
     const caf = new Cafe(ctx, canvasEle);
 });

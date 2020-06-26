@@ -9,24 +9,33 @@ class Cafe {
         this.ctx = ctx;
         this.canvasEle = canvasEle;
 
+        // 1) on submit
+        // 2) call biggoLeft.moveLeft();
+        // 3) call biggoRight.moveRight();
+
         const beantest = new Bean(ctx, canvasEle)
-        beantest.drawBean(ctx, 100, 100);
+        beantest.drawBean(ctx, 100, 150);
+        beantest.getUserTargetNum();
 
         const sortedArray = beantest.randomizedNums(12);
         ctx.font = '14px Rubik';
         ctx.fillStyle = "rgb(58, 24, 24)";
-        ctx.fillText('[' + sortedArray + ']', 150, 20);
+        ctx.fillText('Menu (sorted array): [' + sortedArray + ']', 150, 20);
 
         console.log(sortedArray);
 
         this.numCups = 10;
-
-        const biggoRight = new BiggoRight(ctx, canvasEle);
-        // biggoRight.moveRight();
         const biggoLeft = new BiggoLeft(ctx, canvasEle);
-        // biggoLeft.moveLeft();
+        biggoLeft.moveLeft();
+        const biggoRight = new BiggoRight(ctx, canvasEle);
 
-        const biggoFront = new BiggoFront(ctx, canvasEle);
+        setTimeout(() => {
+            biggoRight.moveRight();
+        }, 7000);
+        
+
+
+        // const biggoFront = new BiggoFront(ctx, canvasEle);
 
         ctx.translate(0, 100);
         this.placeCups(ctx, canvasEle);

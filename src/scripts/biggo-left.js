@@ -6,23 +6,20 @@ class BiggoLeft {
         this.canvasEle = canvasEle;
 
         this.moveLeft = this.moveLeft.bind(this);
-        this.x = 50;
-        this.y = 150;
-
-
+        this.x = 1250;
+        this.y = 458;
     }
 
     moveLeft() {
-        console.log("left test")
-
         let biggoLeftPath = "src/images/corgi-left.png";
         let biggoLeft = new Image();
         biggoLeft.src = biggoLeftPath;
         biggoLeft.onload = () => {
-            // this.ctx.clearRect(-500, -50, 2000, 400);
-            this.ctx.drawImage(biggoLeft, this.x, this.y, 300, 300 * biggoLeft.height / biggoLeft.width);
+            // this.ctx.fillRect(-500, 465, 2000, 170);
+            this.ctx.clearRect(-500, 465, 2000, 170);
+            this.ctx.drawImage(biggoLeft, this.x, this.y, 295, 295 * biggoLeft.height / biggoLeft.width);
         };
-        this.x -= 3;
+        this.x -= 5;
         requestAnimationFrame(this.moveLeft);
 
     }

@@ -1,13 +1,21 @@
 class Bean {
 
-    constructor(ctx, canvasEle, numText){
+    constructor(ctx, canvasEle){
         this.randomizedNums = this.randomizedNums.bind(this);
         this.ctx = ctx;
         this.canvasEle = canvasEle;
-        this.numText = numText;
+   
 
-        this.getUserTargetNum = this.getUserTargetNum.bind(this);        
+        this.getUserTargetNum = this.getUserTargetNum.bind(this);    
 
+        // const userTargetNum = document.getElementById("user-target-num").value;
+        // console.log(userTargetNum);
+        // this.userTargetNum = userTargetNum;
+        // console.log(this.userTargetNum);
+        // const userTargetNumForm = document.getElementById("target-num-form").value;
+        // console.log(userTargetNumForm);
+        // this.userTargetNumForm = userTargetNumForm;
+        // console.log(this.userTargetNumForm);
     }
 
     randomizedNums(num) {
@@ -23,8 +31,14 @@ class Bean {
         return beanArray.sort(function (a, b) { return a - b });
     }
 
+    selectRandIdx(sortedArr) {
+        Math.floor(Math.random() * sortedArr.length);
+    }
+
     getUserTargetNum() {
         const userTargetNum = document.getElementById("user-target-num").value;
+        console.log(userTargetNum);
+
     }
 
     binarySearch(sortedArray, target) {
