@@ -1,15 +1,14 @@
 class Bean {
 
-    constructor(ctx, canvasEle){
+    constructor(ctx, canvasEle, userTargetNum){
         this.randomizedNums = this.randomizedNums.bind(this);
         this.ctx = ctx;
         this.canvasEle = canvasEle;
    
 
-        this.getUserTargetNum = this.getUserTargetNum.bind(this);    
+        // this.getUserTargetNum = this.getUserTargetNum.bind(this);    
 
-        // const userTargetNum = document.getElementById("user-target-num").value;
-        // console.log(userTargetNum);
+       
         // this.userTargetNum = userTargetNum;
         // console.log(this.userTargetNum);
         // const userTargetNumForm = document.getElementById("target-num-form").value;
@@ -35,11 +34,12 @@ class Bean {
         Math.floor(Math.random() * sortedArr.length);
     }
 
-    getUserTargetNum() {
-        const userTargetNum = document.getElementById("user-target-num").value;
-        console.log(userTargetNum);
+    // getUserTargetNum() {
+    //     const userTargetNum = document.getElementById("user-target-num").value;
+    //     console.log(userTargetNum);
+    //     document.getElementById('user-target-num').innerHTML = "Where is this going";
 
-    }
+    // }
 
     binarySearch(sortedArray, target) {
         if (sortedArray.length === 0) {

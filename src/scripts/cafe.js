@@ -13,9 +13,26 @@ class Cafe {
         // 2) call biggoLeft.moveLeft();
         // 3) call biggoRight.moveRight();
 
+
+        // this.onSubmit.addEventListener('click', () => {
+        //     this.submit-button
+        // })
+        
+        const biggoLeft = new BiggoLeft(ctx, canvasEle);
+        biggoLeft.moveLeft();
+
+        
+        // debugger
+        const biggoRight = new BiggoRight(ctx, canvasEle);
+        setTimeout(() => {
+            biggoRight.moveRight();
+        }, 5000);
+
+
         const beantest = new Bean(ctx, canvasEle)
         beantest.drawBean(ctx, 100, 150);
-        beantest.getUserTargetNum();
+
+        // beantest.getUserTargetNum();
 
         const sortedArray = beantest.randomizedNums(12);
         ctx.font = '14px Rubik';
@@ -25,17 +42,14 @@ class Cafe {
         console.log(sortedArray);
 
         this.numCups = 10;
-        const biggoLeft = new BiggoLeft(ctx, canvasEle);
-        biggoLeft.moveLeft();
-        const biggoRight = new BiggoRight(ctx, canvasEle);
-
-        setTimeout(() => {
-            biggoRight.moveRight();
-        }, 7000);
-        
 
 
-        // const biggoFront = new BiggoFront(ctx, canvasEle);
+
+        // setTimeout(() => {
+        //     biggoRight.clearBiggo()
+        // }, 500);
+
+        const biggoFront = new BiggoFront(ctx, canvasEle);
 
         ctx.translate(0, 100);
         this.placeCups(ctx, canvasEle);
@@ -48,12 +62,21 @@ class Cafe {
             // biggoRight.move();
             // ctx.clearBiggo(0,0,)
         }, 20);
+        this.submitTargetNum = document.getElementById('submit-button');
+        this.submitTargetNum.onclick = this.laLaLa.bind(this);
 
+        const userTargetNum = document.getElementById("user-target-num").value;
+        console.log(userTargetNum);
     }
 
     // drawSortedArray(){
     //     this.ctx.fillText(beantest.randomizedNums(12))
     // }
+
+    laLaLa(ctx, canvasEle) {
+
+
+    }
 
     placeCups(ctx, canvasEle) {
         ctx.translate(100, 200);
@@ -83,6 +106,13 @@ class Cafe {
     placeTrays(){
 
     }
+
+
+    play(){
+        //once user clicks button/submit, it will invoke play function
+    }
+
+
 
 
 }

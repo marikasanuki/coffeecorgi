@@ -6,7 +6,7 @@ class BiggoFront {
         this.canvasEle = canvasEle;
 
         let x = 0;
-        let y = 550;
+        let y = 650;
 
         let size = 150;
 
