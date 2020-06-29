@@ -24,26 +24,28 @@ class Cafe {
         this.ctx.translate(-500, -650);
         this.ctx.restore();
         this.placeBeans(this.ctx, this.canvasEle, 372);
-        this.placeBeans(this.ctx, this.canvasEle, 635);
+        this.placeBeans(this.ctx, this.canvasEle, 630);
 
         this.generateSortedArr = this.generateSortedArr.bind(this);
         const currentSortedArr = this.generateSortedArr(12)
-        this.drawSortedArray(currentSortedArr, -300, 120);
+        this.drawSortedArray(currentSortedArr, -335, 120);
 
         setTimeout(() => {
             this.placeBeanNums1(currentSortedArr, 396);
-            this.placeBeanNums2(currentSortedArr, 660);
+            this.placeBeanNums2(currentSortedArr, 657);
         }, 500);
 
         this.placeCupNums1(445);
         this.placeCupNums2(697);
 
         const currentTargetNum = this.selectRandEle(currentSortedArr);
-        this.drawRandEle("Current target number: " + currentTargetNum, -300, 146);
+        this.drawRandEle("Biggo will find the mug containing target bean id: " + currentTargetNum, -335, 147);
+
 
         const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
         const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
         biggoFront.drawBiggoFront(answerIndex);
+        this.drawRandEle("ANSWER (MUG INDEX): " + answerIndex, 170, 190);
     }
 
     play() {
@@ -120,14 +122,14 @@ class Cafe {
     }
     
     placeBeanNums1(sortedArr, y) {
-        let x = -253;
+        let x = -258;
         this.ctx.fillStyle = "#ffffff";
         this.ctx.font = '20px Rubik';
         for (let i = 0; i < sortedArr.length/2 ; i++) {
             const element = sortedArr[i];
             // this.ctx.fillStyle = "#ffffff";
             this.ctx.fillText(element, x, y);
-            x += 149;
+            x += 150;
         }
     }
 

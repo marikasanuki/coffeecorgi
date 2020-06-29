@@ -12,7 +12,7 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
 * randomly generated coffee bean id #s that are sorted
 * mug indices (starts at 0, increments by 1)
 * target bean (user selects)
-* probe/mid index bean/mug
+* probe/mid index mug
 
 
 ## 2. Functionality and MVPs 
@@ -22,12 +22,12 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
     [ ] Select a target coffee bean by id #
     [ ] Click a button to start the visualization
     [ ] Watch as Biggo parses through the beans and mugs and finds the mug index with the target coffee bean id
-    [ ] Will have Basic (5-mug array) and Major (20-mug array) options.
+    [ ] Will have 12-mug array option.
 
     In addition, this project will include:
 
     [ ] Basic explanation of Binary Search requirements
-    [ ] Code examples (in Ruby and JS)
+    [ ] Code example in JS
 
 ## 3. Wireframes 
 ![](src/images/coffee-corgi-wireframe.png)
@@ -35,11 +35,10 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
 
 ## 4. Architecture and Technology 
 
-* Vanilla JavaScript
+* Pure JavaScript
 * HTML5 Canvas
 * CSS
 * Webpack
-* D3.js?
 
 
 ## 5. Implementation Timeline 
