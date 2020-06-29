@@ -7,7 +7,7 @@ class BiggoLeft {
 
         this.moveLeft = this.moveLeft.bind(this);
         this.x = 950;
-        this.y = 458;
+        this.y = 710;
     }
 
     moveLeft() {
@@ -16,17 +16,24 @@ class BiggoLeft {
         biggoLeft.src = biggoLeftPath;
         biggoLeft.onload = () => {
             // this.ctx.fillRect(this.x, this.y, 295, 295 * biggoLeft.height / biggoLeft.width);
-            this.ctx.clearRect(-500, 465, 2000, 170);
+            this.ctx.clearRect(-500, this.y + 7, 2000, 170);
             this.ctx.drawImage(biggoLeft, this.x, this.y, 295, 295 * biggoLeft.height / biggoLeft.width);
         };
         this.x -= 6;
-        requestAnimationFrame(this.moveLeft);
+
+        const animationID = requestAnimationFrame(this.moveLeft);
+        
+        // setTimeout(() => {
+        //     cancelAnimationFrame(animationID); 
+
+        // }, 8);
+
 
     }
 
-    clearBiggo() {
-        cancelAnimationFrame(this.moveLeft);
-    }
+    // clearBiggo() {
+    //     cancelAnimationFrame(this.moveLeft);
+    // }
 
 }
 

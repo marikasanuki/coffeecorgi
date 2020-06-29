@@ -56,6 +56,21 @@ body {
     transform: rotate(55deg);
 }
 
+.cup-container {
+    display: block;
+    
+}
+
+
+.cup-img {
+    position: fixed;
+    left: 1;
+    top: 0;
+    padding-left: 540px;
+    padding-top: 5px;
+    height: 190px;
+}
+
 #target-num-form {
     padding-left: 15px;
 }

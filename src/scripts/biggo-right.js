@@ -6,7 +6,7 @@ class BiggoRight {
 
         this.moveRight = this.moveRight.bind(this);
         this.x = -800;
-        this.y = 150;
+        this.y = 710;
     }
     
     moveRight() {    
@@ -15,10 +15,10 @@ class BiggoRight {
         biggoRight.src = biggoRightPath;
         biggoRight.onload = () => {
             // this.ctx.fillRect(-500, 200, 2000, 180);
-            this.ctx.clearRect(-500, this.y, 2000, 180);
+            this.ctx.clearRect(-500, this.y + 7, 2000, 180);
             this.ctx.drawImage(biggoRight, this.x, this.y, 300, 300 * biggoRight.height / biggoRight.width);
         };
-        this.x += 3;
+        this.x += 6;
         requestAnimationFrame(this.moveRight);
     }
     
