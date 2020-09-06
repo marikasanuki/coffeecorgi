@@ -3,13 +3,23 @@ import Cafe from "./scripts/cafe";
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("modal");
+    const closeModalBtn = document.getElementById("close-modal-btn");
+    closeModalBtn.onclick = () => {
+      modal.style.display = "none"; //hide modal from document
+    };
+
+
     const canvasEle = document.getElementById('cc-cafe');
     canvasEle.width = 1300;
     canvasEle.height = 800;
     const ctx = canvasEle.getContext('2d');
 
     const caf = new Cafe(ctx, canvasEle);
+
 
 
     // const userTargetNum = document.getElementById("user-target-num").value;

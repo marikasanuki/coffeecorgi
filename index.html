@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Coffee Corgi</title>
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Coffee Corgi</title>
         <link rel="icon" href="src/images/corgi-front-favicon.png" />
         <link rel="stylesheet" href="./dist/main.css" />
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
+        <meta name="description" content="A demo of the binary search algorithm with corgis and coffee." />
+        <meta name="keywords" content="coffee corgi, binary search, bsearch, algorithms, javascript project, vanilla javascript mari kasanuki, marikasanuki, software engineer, software developer" />
+        <meta name="author" content="Mari Kasanuki" />
+        
+        <meta property='og:title' content='Coffee Corgi' />
+        <meta property='og:image' content='https://ingenious-prod.s3.amazonaws.com/portfolio-images/marikasanuki-linkedin.png' />
+        <meta property='og:description'
+            content='A demo of the binary search algorithm with corgis and coffee.' />
+        <meta property='og:url' content='http://marikasanuki.com/coffeecorgi/' />
+        <meta property="og:site_name" content="Coffee Corgi" />
+        <meta property="og:type" content="website" />
+        
+
     </head>
 
     <body>
+
+
+        <div id="modal">
+            <div class="modal-cont">
+                <p>DIRECTIONS</p>
+                <p>Select a bean id (target number) from the menu.</p>
+                <p>Biggo the B-Search Dog will find the mug containing target bean id.</p>
+        
+                <span id="close-modal-btn">
+                    <i class="far fa-times-circle"></i>
+                </span>
+            </div>
+        </div>
+
+
         <div class="hed-container" >
             <div class="hed">Coffee Corgi</div>
             <img class="bean-img" src="src/images/bean-paw-3.png" alt="coffee beans">
         </div>
         <div class="subhed" >A demo of the binary search algorithm</div>
-        <div class="cup-container">
+        
+        <!-- <div class="cup-container">
             <img class="cup-img" src="src/images/corgi-mug-s.png" alt="coffee corgi">
-        </div>
+        </div> -->
         
 
         <form id="target-num-form">
@@ -27,15 +57,10 @@
             <input type="text" id="user-target-num" maxlength="2" placeholder="15" >
             <Button id="submit-button" >Submit</Button>
         </form>
+
+
         <!-- <i class="fab fa-github"></i> -->
-<!-- 
-        <div class="modal" >
 
-
-            <div id="close-modal">
-                <i class="far fa-times-circle"></i>
-            </div>
-        </div> -->
         <canvas id="cc-cafe" width="100%" height="100%" ></canvas>
         <script src="./dist/main.js"></script>
         <script src="https://kit.fontawesome.com/5dde6e4e90.js" crossorigin="anonymous"></script>
