@@ -28,7 +28,7 @@ class Cafe {
 
         this.generateSortedArr = this.generateSortedArr.bind(this);
         const currentSortedArr = this.generateSortedArr(12)
-        this.drawSortedArray(currentSortedArr, -335, 120);
+        this.drawSortedArray(currentSortedArr, -330, 140);
 
         setTimeout(() => {
             this.placeBeanNums1(currentSortedArr, 396);
@@ -39,13 +39,13 @@ class Cafe {
         this.placeCupNums2(697);
 
         const currentTargetNum = this.selectRandEle(currentSortedArr);
-        this.drawRandEle("Biggo will find the mug containing target bean id: " + currentTargetNum, -335, 147);
+        this.drawRandEle("Biggo will find the mug containing target bean id: " + currentTargetNum, -330, 167);
 
 
         const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
         const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
         biggoFront.drawBiggoFront(answerIndex);
-        this.drawRandEle("ANSWER (MUG INDEX): " + answerIndex, 170, 190);
+        this.drawRandEle("ANSWER (MUG INDEX): " + answerIndex, -330, 196);
     }
 
     play() {
