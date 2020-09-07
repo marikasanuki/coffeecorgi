@@ -29,12 +29,12 @@
 
 
         <div id="modal">
-            <div class="modal-cont">
+            <div class="modal-inner-cont">
                 <p>DIRECTIONS</p>
                 <p>Select a bean id (target number) from the menu.</p>
                 <p>Biggo the B-Search Dog will find the mug containing target bean id.</p>
         
-                <span id="close-modal-btn">
+                <span id="close-modal-icon">
                     <i class="far fa-times-circle"></i>
                 </span>
             </div>
@@ -46,20 +46,31 @@
             <img class="bean-img" src="src/images/bean-paw-3.png" alt="coffee beans">
         </div>
         <div class="subhed" >A demo of the binary search algorithm</div>
-        
+        <div class="portfolio-cont">
+            <a href="https://marikasanuki.com/" target="_blank"><span class="portfolio-icon"><i class="fas fa-user"></i></span></a>
+            <a href="https://github.com/marikasanuki/coffeecorgi" target="_blank"> <span class="portfolio-icon"><i
+                        class="fab fa-github"></i></span> </a>
+            <a href="https://www.linkedin.com/in/marikasanuki/" target="_blank"><span class="portfolio-icon"><i
+                        class="fab fa-linkedin"></i></span></a>
+        </div>
         <!-- <div class="cup-container">
             <img class="cup-img" src="src/images/corgi-mug-s.png" alt="coffee corgi">
         </div> -->
         
+        <br>
+        <br>
 
+        <span id="open-modal-icon">VIEW DIRECTIONS <i class="fas fa-question-circle"></i> </span>
         <form id="target-num-form">
-            <label class="target-num-label">Select a bean id (target number) from the menu</label>
+            <label class="target-num-label">Enter a bean id (target number):</label>
             <input type="text" id="user-target-num" maxlength="2" placeholder="15" >
             <Button id="submit-button" >Submit</Button>
         </form>
 
 
-        <!-- <i class="fab fa-github"></i> -->
+
+   
+        
 
         <canvas id="cc-cafe" width="100%" height="100%" ></canvas>
         <script src="./dist/main.js"></script>
