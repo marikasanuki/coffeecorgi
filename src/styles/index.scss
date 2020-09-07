@@ -15,12 +15,14 @@ h1, h2, p, strong, em, a {
 
 body {
     background-color: rgb(252, 246, 223);
-
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .cc-cafe {
-    position: absolute;
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
@@ -30,6 +32,8 @@ body {
 
 .hed-container {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .hed {
@@ -46,7 +50,10 @@ body {
     font-size: 24px;
     color: rgb(58, 24, 24);
     padding-top: 2px;
-    padding-left: 15px;
+    padding-left: 35px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .bean-img {
@@ -54,33 +61,38 @@ body {
     padding-top: 10px;
     padding-left: 5px;
     transform: rotate(55deg);
+    position: fixed;
+    right: 5px;
 }
 
 .cup-container {
-    display: block;
+    display: flex;
     
 }
 
 .cup-img {
-    position: absolute;
-    left: 1;
-    top: 0;
     padding-left: 540px;
-    padding-top: 5px;
     height: 190px;
 }
 
 #target-num-form {
-    padding-top: 10px;
-    padding-left: 15px;
+
     font-size: 18px;
+
+    justify-content: left;
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 3px;
+    margin-left: 35px;
+
 }
 
 .target-num-label {
-
+    margin-right: 5px;
 }
 
 #user-target-num {
+    margin-right: 5px;
     font-size: 15px;
     color:rgb(58, 24, 24);
     border: 1px solid rgb(58, 24, 24);
@@ -88,6 +100,8 @@ body {
     width: 23px;
     opacity: 0.9;
     text-align: center;
+    padding: 3px;
+
 }
 
 #user-target-num:focus {
@@ -102,6 +116,7 @@ body {
     border-radius: 10px;
     font-weight: 700;
     cursor: pointer;
+    
 }
 
 #submit-button:hover {
@@ -121,11 +136,11 @@ body {
 
 #modal {
     position: absolute;
-    top: 200px;
+    top: 100px;
     border-radius: 15px;
-    height: 30%;
-    width: 40%;
-    left: 150px;
+    height: auto;
+    width: 50%;
+
 }
 
 .modal-inner-cont {
@@ -145,6 +160,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
+
 }
 
 #close-modal-icon:hover {
@@ -154,27 +170,33 @@ body {
 
 #open-modal-icon {
     cursor: pointer;
-    padding-left: 15px;
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 3px;
+    padding-left: 35px;
 }
+
 #open-modal-icon:hover {
     color: #c6978e;
 }
 
-
 .portfolio-cont {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
     padding-left: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-    position: fixed;
-    bottom: 5px;
     background-color: white;
-    width: 100%;
 }
 
 .portfolio-icon {
     cursor: pointer;
     font-size: 24px;
-    padding: 2px;
+    padding: 5px;
 }
 
 .portfolio-icon:hover {

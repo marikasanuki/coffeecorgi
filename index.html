@@ -30,10 +30,20 @@
 
         <div id="modal">
             <div class="modal-inner-cont">
-                <p>DIRECTIONS</p>
-                <p>Select a bean id (target number) from the menu.</p>
-                <p>Biggo the B-Search Dog will find the mug containing target bean id.</p>
-        
+                <p><b>What is binary bearch?</b></p>
+                <p>Binary search is an algorithm that finds the index position of a target number within a <i>sorted</i> array of numbers.</p>
+                <br>
+                <p><b>How does binary search work?</b></p>
+                <p>In order to search for the target, it splits the array it's searching in half in order to identify whether the target number is bigger or smaller than the probe number.</p>
+                <br>
+                <p><b>Why binary search?</b></p>
+                <p>The benefit of this algorithm is its speed at elimitating which half the target number is located because at its core, it splits the array in which it's searching in half in order to idenify whether the target number is bigger or smaller than the probe number.</p>
+                <br>
+                <p><b>DIRECTIONS</b></p>
+
+                <p>1) Choose and enter a bean id (target number) from the menu and click the Submit button.</p>
+                <p>2) Watch as Biggo the B-Search Dog finds the mug that contains the target bean id.</p>
+ 
                 <span id="close-modal-icon">
                     <i class="far fa-times-circle"></i>
                 </span>
@@ -56,21 +66,13 @@
         <!-- <div class="cup-container">
             <img class="cup-img" src="src/images/corgi-mug-s.png" alt="coffee corgi">
         </div> -->
-        
-        <br>
-        <br>
 
-        <span id="open-modal-icon">VIEW DIRECTIONS <i class="fas fa-question-circle"></i> </span>
+        <span id="open-modal-icon">VIEW DIRECTIONS&nbsp;<i class="fas fa-question-circle"></i> </span>
         <form id="target-num-form">
             <label class="target-num-label">Enter a bean id (target number):</label>
             <input type="text" id="user-target-num" maxlength="2" placeholder="15" >
             <Button id="submit-button" >Submit</Button>
         </form>
-
-
-
-   
-        
 
         <canvas id="cc-cafe" width="100%" height="100%" ></canvas>
         <script src="./dist/main.js"></script>
