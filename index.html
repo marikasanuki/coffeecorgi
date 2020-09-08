@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Coffee Corgi</title>
-
+        
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="src/images/corgi-front-favicon.png" />
         <link rel="stylesheet" href="./dist/main.css" />
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
+        
         <meta name="description" content="A demo of the binary search algorithm with corgis and coffee." />
         <meta name="keywords" content="coffee corgi, binary search, bsearch, algorithms, javascript project, vanilla javascript mari kasanuki, marikasanuki, software engineer, software developer" />
         <meta name="author" content="Mari Kasanuki" />
@@ -17,11 +16,12 @@
         <meta property='og:title' content='Coffee Corgi' />
         <meta property='og:image' content='https://ingenious-prod.s3.amazonaws.com/portfolio-images/marikasanuki-linkedin.png' />
         <meta property='og:description'
-            content='A demo of the binary search algorithm with corgis and coffee.' />
+        content='A demo of the binary search algorithm with corgis and coffee.' />
         <meta property='og:url' content='http://marikasanuki.com/coffeecorgi/' />
         <meta property="og:site_name" content="Coffee Corgi" />
         <meta property="og:type" content="website" />
         
+        <title>Coffee Corgi</title>
 
     </head>
 
@@ -30,20 +30,27 @@
 
         <div id="modal">
             <div class="modal-inner-cont">
-                <p><b>What is binary bearch?</b></p>
+                <p><b>What is binary search?</b></p>
                 <p>Binary search is an algorithm that finds the index position of a target number within a <i>sorted</i> array of numbers.</p>
                 <br>
                 <p><b>How does binary search work?</b></p>
-                <p>In order to search for the target, it splits the array it's searching in half in order to identify whether the target number is bigger or smaller than the probe number.</p>
+                <p>To locate the target number, a binary search takes a divide and conquer approach: We identify the number that is located in the middle of the sorted array and compare to see if it is smaller than, bigger than, or the same as the target number we're trying to locate.</p>
+                <br>
+                <p><b>What is Big O?</b></p>
+                <p>Here is <a target="_blank" href="https://www.bigocheatsheet.com/">a cheatsheet</a> that breaks down the time and space complexities of common algorithms used in programming.</p>
                 <br>
                 <p><b>Why binary search?</b></p>
-                <p>The benefit of this algorithm is its speed at elimitating which half the target number is located because at its core, it splits the array in which it's searching in half in order to idenify whether the target number is bigger or smaller than the probe number.</p>
+                <p>The benefit of this algorithm is its speed at elimitating which half the target number is located because its worse-case time complexity dependent on the input (in our case the length of the array), is goin to be logarithmic O(log n). B-search takes a divide and conquer strategy by splitting the array it is searching in half and checking to see if the number located in the dead center of the array on that iterartion of the algorithm is bigger, smaller, or the same as the target number we are trying to locate.</p>
                 <br>
                 <p><b>DIRECTIONS</b></p>
 
+                <p>In this demo, our array is represented by coffee cups. Each cup has a number that corresponds with an index position within an array.</p>
+                Indices always start with 0; thus, in this demo, the cup numbers aka indices are always the same: 0 through 11.
+                The individual numbers within the array 
                 <p>1) Choose and enter a bean id (target number) from the menu and click the Submit button.</p>
                 <p>2) Watch as Biggo the B-Search Dog finds the mug that contains the target bean id.</p>
- 
+                <br>
+                <p><a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">JavaScript code »</a> | <a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">Ruby code »</a></p>
                 <span id="close-modal-icon">
                     <i class="far fa-times-circle"></i>
                 </span>
@@ -69,12 +76,12 @@
         </div> -->
 
         <div class="directions-cont">
-            <span id="open-modal-icon">VIEW DIRECTIONS&nbsp;<i class="fas fa-question-circle"></i> </span>
-            <form id="target-num-form">
+            <form id="target-num-form" onsubmit="return getTargetNum();" >
                 <label class="target-num-label">Enter a bean id (target number):</label>
-                <input type="text" id="user-target-num" maxlength="2" placeholder="15">
+                <input type="text" id="user-target-num" maxlength="2" placeholder="##">
                 <Button id="submit-button">Submit</Button>
             </form>
+            <span id="open-modal-icon">VIEW DIRECTIONS&nbsp;<i class="fas fa-question-circle"></i> </span>
         </div>
 
         <canvas id="cc-cafe" width="100%" height="100%" ></canvas>

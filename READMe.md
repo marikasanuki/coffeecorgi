@@ -29,6 +29,10 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
     [ ] Basic explanation of Binary Search requirements
     [ ] Code example in JS
 
+    1) drew mugs as an execise in Canvas / SVGs
+    2) Use canvas to animate the running Corgis
+
+
 ## 3. Wireframes 
 ![](src/images/coffee-corgi-wireframe.png)
 
@@ -43,24 +47,24 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
 
 ## 5. Implementation Timeline 
 
-### Day 1
+### Stage 1
 * Research on Canvas and D3.js
 * Basic layout outlined
 * Class structure outlined
 
-### Day 2: 
+### Stage 2: 
 * Basic movement logic outlined
 * Layout styled
 
-### Day 3
+### Stage 3
 * Movement logic refined
 * Layout style refined
 
-### Day 4
+### Stage 4
 * Feature testing 
 * Styling
 
-### Day 5
+### Stage 5
 * Debugging 
 * Final styling
 * Production README

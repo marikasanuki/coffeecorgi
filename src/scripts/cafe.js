@@ -39,13 +39,13 @@ class Cafe {
         this.placeCupNums2(697);
 
         const currentTargetNum = this.selectRandEle(currentSortedArr);
-        this.drawRandEle("Biggo will find the mug containing target bean id: " + currentTargetNum, -330, 167);
+        this.drawRandEle("Target bean id: " + currentTargetNum, -330, 167);
 
 
         const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
         const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
         biggoFront.drawBiggoFront(answerIndex);
-        this.drawRandEle("ANSWER (MUG INDEX): " + answerIndex, -330, 196);
+        this.drawRandEle("Biggo will find the target bean in this mug: " + answerIndex, -330, 196);
     }
 
     play() {

@@ -26,18 +26,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // const userTargetNum = document.getElementById("user-target-num").value;
-    // console.log(userTargetNum);
+
+
     // const userTargetNum2 = document.getElementById("target-num-form").value;
     // console.log(userTargetNum2);
-    // const userTargetNum3 = document.getElementById("submit-button").value;
-    // console.log(userTargetNum3);
 
+    // const targetButtonValue = document.getElementById("submit-button").value;
+    // console.log(targetButtonValue);
 
+    function getTargetNum() {
+      alert("Submit button clicked!");
+      return true;
+    }
+
+    
     // const targetButton = document.getElementById("submit-button");
-    // targetButton.addEventListener("click", getTargetNum);
+    // targetButton.onclick = () => {
+    //         const userTargetNum = document.getElementById("user-target-num")
+    //           .value;
+    //         console.log(userTargetNum);
+    // };
+
+
     // function getTargetNum(e) {
-    //     let userTargetNum = document.getElementById("user-target-num").value;
+    //     document.getElementById("user-target-num").value;
     //     console.log(userTargetNum);
     //     let userTargetNum2 = e.target.value;
     //     console.log(userTargetNum2);
