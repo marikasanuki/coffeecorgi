@@ -1,9 +1,6 @@
 import './styles/index.scss';
 import Cafe from "./scripts/cafe";
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const modal = document.getElementById("modal");
