@@ -15,10 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const canvasEle = document.getElementById('cc-cafe');
-    canvasEle.width = 1300;
+    canvasEle.width = 1000;
     canvasEle.height = 800;
     const ctx = canvasEle.getContext('2d');
-
     const caf = new Cafe(ctx, canvasEle);
 
 

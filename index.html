@@ -31,26 +31,45 @@
         <div id="modal">
             <div class="modal-inner-cont">
                 <p><b>What is binary search?</b></p>
-                <p>Binary search is an algorithm that finds the index position of a target number within a <i>sorted</i> array of numbers.</p>
+                <p>Binary search is an algorithm that finds the index position of a target number within a <i>sorted</i> array of numbers.
+                <br><br>
+                A basic binary search function takes in a sorted array of integers and a target number that you are trying to locate
+                within the array. It will return the index of the target number if the array contains it.</p>
                 <br>
                 <p><b>How does binary search work?</b></p>
-                <p>To locate the target number, a binary search takes a divide and conquer approach: We identify the number that is located in the middle of the sorted array and compare to see if it is smaller than, bigger than, or the same as the target number we're trying to locate.</p>
+                <p>
+                    
+                    To locate the target number, a binary search function takes a divide and conquer approach with a <a target="_blank" href="https://www.bigocheatsheet.com/">O(log n) (logarithmic)</a> worst-case-scenario time complexity.
+                    
+                    By splitting the array it is searching in half and checking to see if the number located in the dead center of the array on
+                    that iterartion of the algorithm is bigger, smaller, or the same as the target number we are trying to locate.
+                    <br><br>
+                    For an array sorted from smallest to largest it will:  
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    1) identify the midpoint number that is located in the middle of the sorted array
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    2) compare that midpoint number with the target number it is looking for<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        a) if the midpoint number IS the target number, the function returns the index of that number; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        b) if the midpoint number is LARGER than the target number, the function starts over with the left half of the array because we know that the target is smaller than any number that comes after the midpoint number (since the array is sorted)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        c) if the midpoint number is SMALLER than the target number, the function starts over with the right half of the array because we know that the target is larger than.
+                </p>
                 <br>
-                <p><b>What is Big O?</b></p>
-                <p>Here is <a target="_blank" href="https://www.bigocheatsheet.com/">a cheatsheet</a> that breaks down the time and space complexities of common algorithms used in programming.</p>
+                <p><a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">JavaScript code »</a>
+                    | <a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">Ruby code »</a>
+                </p>
+                <br>
+                <p><b>What is time complexity?</b></p>
+                <p>Big O is a way to analyze the time and space complexities of algorithms used in programming.</p>
                 <br>
                 <p><b>Why binary search?</b></p>
-                <p>The benefit of this algorithm is its speed at elimitating which half the target number is located because its worse-case time complexity dependent on the input (in our case the length of the array), is goin to be logarithmic O(log n). B-search takes a divide and conquer strategy by splitting the array it is searching in half and checking to see if the number located in the dead center of the array on that iterartion of the algorithm is bigger, smaller, or the same as the target number we are trying to locate.</p>
-                <br>
-                <p><b>DIRECTIONS</b></p>
+                <p>The benefit of this algorithm is its speed at elimitating which half the target number is located because its worse-case time complexity dependent on the input (in our case the length of the array), is going to be logarithmic O(log n).</p>
 
-                <p>In this demo, our array is represented by coffee cups. Each cup has a number that corresponds with an index position within an array.</p>
-                Indices always start with 0; thus, in this demo, the cup numbers aka indices are always the same: 0 through 11.
-                The individual numbers within the array 
-                <p>1) Choose and enter a bean id (target number) from the menu and click the Submit button.</p>
-                <p>2) Watch as Biggo the B-Search Dog finds the mug that contains the target bean id.</p>
-                <br>
-                <p><a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">JavaScript code »</a> | <a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">Ruby code »</a></p>
+
                 <span id="close-modal-icon">
                     <i class="far fa-times-circle"></i>
                 </span>
@@ -77,14 +96,26 @@
 
         <div class="directions-cont">
             <form id="target-num-form" onsubmit="return getTargetNum();" >
-                <label class="target-num-label">Enter a bean id (target number):</label>
+                <label class="target-num-label">Enter the number of a Bean (the target number) for Biggo to locate:</label>
                 <input type="text" id="user-target-num" maxlength="2" placeholder="##">
                 <Button id="submit-button">Submit</Button>
             </form>
-            <span id="open-modal-icon">VIEW DIRECTIONS&nbsp;<i class="fas fa-question-circle"></i> </span>
+            <span id="open-modal-icon">WHAT'S BINARY SEARCH&nbsp;<i class="fas fa-question-circle"></i> </span>
         </div>
 
-        <canvas id="cc-cafe" width="100%" height="100%" style="font-family: Rubik; font-size: 18px;" ></canvas>
+        <div class="outer-cont">
+            <canvas id="cc-cafe" width="100%" height="100%" style="font-family: Rubik; font-size: 18px;"></canvas>
+            <div class="instructions-cont">
+                <b>INSTRUCTIONS</b>
+                <br>
+                In this demo, numbered coffee cups represent an array. Each cup has a number that corresponds with an index
+                position. Numbered coffee beans represent the numbers housed in the array.
+                <br><br>
+                1) Choose and enter a bean id (target number) from the menu and click the Submit button.
+                <br><br>
+                2) Watch as Biggo the B-Search Dog finds the cup that contains the target bean id.
+            </div>
+        </div>
         <script src="./dist/main.js"></script>
         <script src="https://kit.fontawesome.com/5dde6e4e90.js" crossorigin="anonymous"></script>
 

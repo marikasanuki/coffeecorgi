@@ -21,19 +21,8 @@ body {
 }
 
 
-#cc-cafe {
-    display: flex;
-    top: 0;
-    left: 0;
-    height: 70vh;
 
-    z-index: -99;
-    border: 4px solid rgb(58, 24, 24);
-    border-radius: 20px;
-    box-shadow: 10px 6px 6px #c6978e;
-    margin-top: 10px;
-    background-color: #FFFFFF;
-}
+
 
 .hed-container {
     display: flex;
@@ -107,6 +96,8 @@ body {
     background-color: rgba(198, 151, 142, 1);
 }
 
+
+
 #target-num-form {
     font-size: 18px;
     margin-right: 3px;
@@ -151,6 +142,38 @@ body {
 
 #submit-button:focus {
     outline-width: 0;
+}
+
+.outer-cont {
+    display: flex;
+    justify-content: center;
+}
+
+#cc-cafe {
+    top: 0;
+    left: 0;
+    height: 70vh;
+    z-index: -99;
+    border: 4px solid rgb(58, 24, 24);
+    border-radius: 20px;
+    box-shadow: 10px 6px 6px #c6978e;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+}
+
+.instructions-cont {
+    color: rgb(58, 24, 24);
+    width: 20%;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgb(58, 24, 24);
+    text-align: center;
+    padding: 25px;
+    margin-top: 140px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 18px;
 }
 
 #modal {

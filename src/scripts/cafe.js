@@ -28,7 +28,8 @@ class Cafe {
 
         this.generateSortedArr = this.generateSortedArr.bind(this);
         const currentSortedArr = this.generateSortedArr(12)
-        this.drawSortedArray(currentSortedArr, -330, 140);
+        // this.drawSortedArray(currentSortedArr, -330, 140);
+        this.drawSortedArray(currentSortedArr, -130, 140);
 
         setTimeout(() => {
             this.placeBeanNums1(currentSortedArr, 396);
@@ -39,13 +40,18 @@ class Cafe {
         this.placeCupNums2(697);
 
         const currentTargetNum = this.selectRandEle(currentSortedArr);
-        this.drawRandEle("Target bean id: " + currentTargetNum, -330, 167);
+        this.drawRandEle("The target number you picked is: Bean " + currentTargetNum + ".", -330, 197);
 
 
         const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
         const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
         biggoFront.drawBiggoFront(answerIndex);
-        this.drawRandEle("Biggo will find the target bean in this mug: " + answerIndex, -330, 196);
+        // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
+        this.drawRandEle("Question: Which index houses the target number (Bean " + currentTargetNum + ")?", -330, 226);
+
+        setTimeout(() => {
+          this.drawRandEle("Answer: Cup " + answerIndex + ".", 340, 170);
+        }, 10000);
     }
 
     play() {
@@ -67,9 +73,9 @@ class Cafe {
 
     drawSortedArray(sortedArr, x, y){
         // const currentSortedArr = ;
-        this.ctx.font = '18px Rubik';
+        this.ctx.font = '24px Rubik';
         this.ctx.fillStyle = "rgb(58, 24, 24)";
-        this.ctx.fillText('Menu (sorted array): [' + sortedArr + ']', x, y);
+        this.ctx.fillText('Menu Array: [' + sortedArr + ']', x, y);
     }
 
 
