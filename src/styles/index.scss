@@ -167,13 +167,19 @@ body {
     height: 100%;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgb(58, 24, 24);
-    text-align: center;
-    padding: 25px;
-    margin-top: 140px;
+    text-align: left;
+
+    margin-top: 100px;
     margin-bottom: 20px;
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 25px;
     font-size: 18px;
+
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 1em;
+    line-height: 1.5em;
+    background-color: #FFFFFF;
+    border: solid 6px rgba(58, 24, 24, .7);
 }
 
 #modal {

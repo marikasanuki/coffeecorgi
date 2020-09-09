@@ -33,41 +33,55 @@
                 <p><b>What is binary search?</b></p>
                 <p>Binary search is an algorithm that finds the index position of a target number within a <i>sorted</i> array of numbers.
                 <br><br>
-                A basic binary search function takes in a sorted array of integers and a target number that you are trying to locate
-                within the array. It will return the index of the target number if the array contains it.</p>
+                <b>How does binary search work?</b>
                 <br>
-                <p><b>How does binary search work?</b></p>
-                <p>
-                    
-                    To locate the target number, a binary search function takes a divide and conquer approach with a <a target="_blank" href="https://www.bigocheatsheet.com/">O(log n) (logarithmic)</a> worst-case-scenario time complexity.
-                    
-                    By splitting the array it is searching in half and checking to see if the number located in the dead center of the array on
-                    that iterartion of the algorithm is bigger, smaller, or the same as the target number we are trying to locate.
-                    <br><br>
-                    For an array sorted from smallest to largest it will:  
+                A basic binary search function takes in a sorted array of integers and a target number that you are trying to locate
+                within the array. It will return the index of the target number if the array contains it.
+                <br><br>
+                For an array sorted from smallest to largest it will:  
+                <br><br>
+
+                1) Identify the midpoint number that is located in the middle of the sorted array.
+                <br><br>
+
+                2) Compare that midpoint number with the target number it is trying to locate.
+                <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    a) If the midpoint number IS the target number:
                     <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    1) identify the midpoint number that is located in the middle of the sorted array
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The function returns the index of that number.
                     <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    2) compare that midpoint number with the target number it is looking for<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        a) if the midpoint number IS the target number, the function returns the index of that number; <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        b) if the midpoint number is LARGER than the target number, the function starts over with the left half of the array because we know that the target is smaller than any number that comes after the midpoint number (since the array is sorted)<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        c) if the midpoint number is SMALLER than the target number, the function starts over with the right half of the array because we know that the target is larger than.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    b) If the midpoint number is LARGER than the target number:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The function starts over with the left half of the array.
+                    <!-- because we know that the target is smaller than any number that comes after the midpoint number (since the array is sorted) -->
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    c) If the midpoint number is SMALLER than the target number:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The function starts over with the right half of the array.
+                    <!-- because we know that the target is larger than. -->
                 </p>
                 <br>
                 <p><a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">JavaScript code »</a>
-                    | <a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">Ruby code »</a>
+                    &nbsp;&nbsp;|&nbsp;&nbsp; <a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">Ruby code »</a>
                 </p>
                 <br>
-                <p><b>What is time complexity?</b></p>
-                <p>Big O is a way to analyze the time and space complexities of algorithms used in programming.</p>
-                <br>
                 <p><b>Why binary search?</b></p>
-                <p>The benefit of this algorithm is its speed at elimitating which half the target number is located because its worse-case time complexity dependent on the input (in our case the length of the array), is going to be logarithmic O(log n).</p>
+                <p>
+                    The benefit of this algorithm is its speed at narrowing down which half of the array contains the target number. 
+                    This divide and conquer approach has a worst-case-scenario time complexity of <a target="_blank"
+                    href="https://www.bigocheatsheet.com/">O(log n) (logarithmic)</a>.
+                    This means that even as the input grows rapidly (in this case the length of the array) the amount of time it takes to locate the target number ,
+                    <br><br>
+                </p>
 
 
                 <span id="close-modal-icon">
@@ -106,12 +120,14 @@
         <div class="outer-cont">
             <canvas id="cc-cafe" width="100%" height="100%" style="font-family: Rubik; font-size: 18px;"></canvas>
             <div class="instructions-cont">
-                <b>INSTRUCTIONS</b>
-                <br>
-                In this demo, numbered coffee cups represent an array. Each cup has a number that corresponds with an index
-                position. Numbered coffee beans represent the numbers housed in the array.
+
+                ○ In this demo, numbered coffee cups represent an array.<br>
+                ○ Each cup has a number that corresponds with an index position. <br>
+                ○ Numbered coffee beans represent the numbers housed in the array.
                 <br><br>
-                1) Choose and enter a bean id (target number) from the menu and click the Submit button.
+                <b style="text-align: center;">INSTRUCTIONS</b>
+                <br>
+                1) Pick a bean id (target number) from the menu, type it in the field, and click the Submit button.
                 <br><br>
                 2) Watch as Biggo the B-Search Dog finds the cup that contains the target bean id.
             </div>
