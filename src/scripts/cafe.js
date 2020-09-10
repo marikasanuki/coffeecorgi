@@ -28,30 +28,32 @@ class Cafe {
 
         this.generateSortedArr = this.generateSortedArr.bind(this);
         const currentSortedArr = this.generateSortedArr(12)
-        // this.drawSortedArray(currentSortedArr, -330, 140);
-        this.drawSortedArray(currentSortedArr, -130, 140);
-
+        
         setTimeout(() => {
             this.placeBeanNums1(currentSortedArr, 396);
             this.placeBeanNums2(currentSortedArr, 657);
         }, 500);
-
+        
         this.placeCupNums1(445);
         this.placeCupNums2(697);
-
+        
         const currentTargetNum = this.selectRandEle(currentSortedArr);
-        this.drawRandEle("The target number you picked is: Bean " + currentTargetNum + ".", -330, 197);
-
-
+        this.drawRandEle("Biggo is currently searching for this bean (target number): Bean " + currentTargetNum + ".", -330, 140);
+        
+        
         const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
         const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
         biggoFront.drawBiggoFront(answerIndex);
         // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
-        this.drawRandEle("Question: Which index houses the target number (Bean " + currentTargetNum + ")?", -330, 226);
-
+        this.drawRandEle("Which cup (index position) houses Bean " + currentTargetNum + "?", -330, 167);
+        
         setTimeout(() => {
-          this.drawRandEle("Answer: Cup " + answerIndex + ".", 340, 170);
+            this.drawRandEle("Answer: Cup " + answerIndex + ".", 340, 167);
         }, 10000);
+        
+        
+        // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUALY ARRAY AT TOP.
+
     }
 
     play() {
@@ -72,8 +74,7 @@ class Cafe {
     }
 
     drawSortedArray(sortedArr, x, y){
-        // const currentSortedArr = ;
-        this.ctx.font = '24px Rubik';
+        this.ctx.font = '18px Rubik';
         this.ctx.fillStyle = "rgb(58, 24, 24)";
         this.ctx.fillText('Menu Array: [' + sortedArr + ']', x, y);
     }
