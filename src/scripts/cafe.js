@@ -71,8 +71,12 @@ class Cafe {
       );
 
       const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
+
+      // front-facing biggo appears in front of correct answer index/bean/cup
       const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
-      biggoFront.drawBiggoFront(answerIndex);
+            setTimeout(() => {
+              biggoFront.drawBiggoFront(answerIndex);
+            }, 9000);
       // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
       this.drawRandEle(
         "Which cup (index position) houses Bean " + currentTargetNum + "?",
@@ -82,7 +86,7 @@ class Cafe {
 
       setTimeout(() => {
         this.drawRandEle("Answer: Cup " + answerIndex + ".", 340, 167);
-      }, 10000);
+      }, 9000);
 
       // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUALY ARRAY AT TOP.
     }
