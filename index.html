@@ -39,7 +39,7 @@
                 within the array. It will return the index of the target number if the array contains it.
                 <br><br>
                 For an array sorted from smallest to largest it will:  
-                <br><br>
+                <br>
 
                 1) Identify the midpoint number that is located in the middle of the sorted array.
                 <br><br>
@@ -67,7 +67,6 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     The function starts over with the right half of the array.
-                    <!-- because we know that the target is larger than. -->
                 </p>
                 <br>
                 <p><a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">JavaScript code »</a>
@@ -76,9 +75,9 @@
                 <br>
                 <p><b>Why binary search?</b></p>
                 <p>
-                    The benefit of this algorithm is its speed at narrowing down which half of the array contains the target number. Therefore, as the input size grows (the length of the array that is being searched), the time it takes to check for and locate the target number is more time efficient than a linear search of the array (which would check one number in the array at a time until it happens upon the target number). 
+                    The benefit of this algorithm is its speed at narrowing down which half of the array contains the target number. Therefore, as the input size—the length of the array that is being searched—grows, the time it takes to check for and locate the target number is more time efficient than a linear search of the array (which would check one number in the array at a time until it happens upon the target number). 
                     <br><br>
-                    This divide and conquer approach has a worst-case-scenario time complexity of <a target="_blank"
+                    Binary search's divide and conquer approach has a worst-case-scenario time complexity of <a target="_blank"
                         href="https://www.bigocheatsheet.com/">O(log n) (logarithmic)</a>.
                 </p>
 
