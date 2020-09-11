@@ -6,54 +6,85 @@ import Bean from "./bean";
 
 class Cafe {
     constructor(ctx, canvasEle) {
-        this.ctx = ctx;
-        this.canvasEle = canvasEle;
-    
-        const biggoLeft = new BiggoLeft(this.ctx, this.canvasEle);
-        biggoLeft.moveLeft();
-        const biggoRight = new BiggoRight(this.ctx, this.canvasEle);
-        setTimeout(() => {
-            biggoRight.moveRight();
-        }, 4500);
+      this.ctx = ctx;
+      this.canvasEle = canvasEle;
+      this.generateSortedArr = this.generateSortedArr.bind(this);
 
-        this.numCups = 10;
-        this.ctx.translate(0, 100);
-        this.placeCups(this.ctx, this.canvasEle);
-        this.ctx.translate(-850, 50);
-        this.placeCups(this.ctx, this.canvasEle);
-        this.ctx.translate(-500, -650);
-        this.ctx.restore();
-        this.placeBeans(this.ctx, this.canvasEle, 372);
-        this.placeBeans(this.ctx, this.canvasEle, 630);
+      // PLACE THE CUPS ON CANVAS
+      this.numCups = 10;
+      this.ctx.translate(0, 100);
+      this.placeCups(this.ctx, this.canvasEle);
+      this.ctx.translate(-850, 50);
+      this.placeCups(this.ctx, this.canvasEle);
+      this.ctx.translate(-500, -650);
+      this.ctx.restore();
 
-        this.generateSortedArr = this.generateSortedArr.bind(this);
-        const currentSortedArr = this.generateSortedArr(12)
-        
-        setTimeout(() => {
+      // PLACE THE BEANS ON CANVAS
+      this.placeBeans(this.ctx, this.canvasEle, 372);
+      this.placeBeans(this.ctx, this.canvasEle, 630);
+
+      // GENERATE A SORTED ARRAY OF RANDOM NUMBERS FROM 0 TO 99
+      const currentSortedArr = this.generateSortedArr(12);
+
+      // PLACE NUMBERS FROM SORTED ARRAY ONTO BEANS
+      setTimeout(() => {
             this.placeBeanNums1(currentSortedArr, 396);
             this.placeBeanNums2(currentSortedArr, 657);
-        }, 500);
-        
-        this.placeCupNums1(445);
-        this.placeCupNums2(697);
-        
-        const currentTargetNum = this.selectRandEle(currentSortedArr);
-        this.drawRandEle("Biggo is currently searching for this bean (target number): Bean " + currentTargetNum + ".", -330, 140);
-        
-        
-        const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
-        const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
-        biggoFront.drawBiggoFront(answerIndex);
-        // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
-        this.drawRandEle("Which cup (index position) houses Bean " + currentTargetNum + "?", -330, 167);
-        
-        setTimeout(() => {
-            this.drawRandEle("Answer: Cup " + answerIndex + ".", 340, 167);
-        }, 10000);
-        
-        
-        // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUALY ARRAY AT TOP.
+      }, 500);
 
+      // PLACE NUMBERS ON CUPS
+      this.placeCupNums1(445);
+      this.placeCupNums2(697);
+
+      // SUBMIT BUTTON CLICK HANDLER: GRAB USER INPUT NUMBER
+      let targetButton = document.getElementById("submit-button");
+      targetButton.onclick = (e) => {
+            e.preventDefault();
+            
+            let userTargetNum = Number(document.getElementById("user-target-num").value); //converts input string to number
+
+                
+                console.log(userTargetNum);
+
+                const biggoLeft = new BiggoLeft(
+                    this.ctx,
+                    this.canvasEle
+                );
+                biggoLeft.moveLeft();
+                const biggoRight = new BiggoRight(
+                    this.ctx,
+                    this.canvasEle
+                );
+                setTimeout(() => {
+                    biggoRight.moveRight();
+                }, 4500);
+
+      };
+
+      const currentTargetNum = this.selectRandEle(currentSortedArr);
+      this.drawRandEle(
+        "Biggo is currently searching for this bean (target number): Bean " +
+          currentTargetNum +
+          ".",
+        -330,
+        140
+      );
+
+      const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
+      const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
+      biggoFront.drawBiggoFront(answerIndex);
+      // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
+      this.drawRandEle(
+        "Which cup (index position) houses Bean " + currentTargetNum + "?",
+        -330,
+        167
+      );
+
+      setTimeout(() => {
+        this.drawRandEle("Answer: Cup " + answerIndex + ".", 340, 167);
+      }, 10000);
+
+      // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUALY ARRAY AT TOP.
     }
 
     play() {
@@ -162,8 +193,6 @@ class Cafe {
         this.ctx.font = '18px Rubik';
         this.ctx.fillText(ele, x, y);
     }
-
-
 
     binarySearch(sortedArray, target) {
         // if (sortedArray.length === 0) {

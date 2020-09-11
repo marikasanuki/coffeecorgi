@@ -27,7 +27,6 @@
 
     <body>
 
-
         <div id="modal">
             <div class="modal-inner-cont">
                 <p><b>What is binary search?</b></p>
@@ -105,10 +104,11 @@
             <img class="cup-img" src="src/images/corgi-mug-s.png" alt="coffee corgi">
         </div> -->
 
+        <!-- onsubmit="return getTargetNum();" -->
         <div class="directions-cont">
-            <form id="target-num-form" onsubmit="return getTargetNum();" >
+            <form id="target-num-form"  >
                 <label class="target-num-label">Enter the number of a Bean (the target number) for Biggo to locate:</label>
-                <input type="text" id="user-target-num" maxlength="2" placeholder="##">
+                <input type="text" id="user-target-num" min="0" max="99" type="number" placeholder="##" maxlength="2" >
                 <Button id="submit-button">Submit</Button>
             </form>
             <span id="open-modal-icon">WHAT'S BINARY SEARCH&nbsp;<i class="fas fa-question-circle"></i> </span>
