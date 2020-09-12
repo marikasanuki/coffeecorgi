@@ -184,6 +184,8 @@ body {
     border: solid 6px rgba(58, 24, 24, .7);
 }
 
+
+
 #modal {
     position: absolute;
     top: 100px;
@@ -200,12 +202,17 @@ body {
     
     border: 10px solid #c6978e;
     border-radius: 15px;
-    padding: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 35px;
+    padding-left: 35px;
     height: auto;
     width: 85%;
     font-size: 17px;
     margin: auto;
-
+    column-count: 2;
+    column-gap: 40px;
+    column-fill: balance;
 }
 
 #close-modal-icon {
@@ -251,3 +258,16 @@ body {
 .portfolio-icon-byline:hover {
     color: #c6978e;
 }
+
+.break {
+    break-after: column;
+}
+
+@media only screen and (min-width: 1300px) {
+    .modal-inner-cont {
+        width: 57%;
+        font-size: 19px;
+        margin-top: 50px;
+    }
+}
+
