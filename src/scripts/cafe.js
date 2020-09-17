@@ -43,21 +43,26 @@ class Cafe {
             
             let userTargetNum = Number(document.getElementById("user-target-num").value); //converts input string to number
 
-                
-                console.log(userTargetNum);
+            
+                if (Number.isNaN(userTargetNum)) { //WHEN NON-NUMBERS/NaN IS SUBMITTED 
+                  userTargetNum = "Invalid Target Number submitted.";
+                  console.log(userTargetNum);
+                } else {
+                    const biggoLeft = new BiggoLeft(
+                        this.ctx,
+                        this.canvasEle
+                    );
+                    biggoLeft.moveLeft();
+                    const biggoRight = new BiggoRight(
+                        this.ctx,
+                        this.canvasEle
+                    );
+                    setTimeout(() => {
+                        biggoRight.moveRight();
+                    }, 4500);
+                }
 
-                const biggoLeft = new BiggoLeft(
-                    this.ctx,
-                    this.canvasEle
-                );
-                biggoLeft.moveLeft();
-                const biggoRight = new BiggoRight(
-                    this.ctx,
-                    this.canvasEle
-                );
-                setTimeout(() => {
-                    biggoRight.moveRight();
-                }, 4500);
+
 
       };
 
