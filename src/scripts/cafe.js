@@ -6,99 +6,106 @@ import Bean from "./bean";
 
 class Cafe {
     constructor(ctx, canvasEle) {
-      this.ctx = ctx;
-      this.canvasEle = canvasEle;
-      this.generateSortedArr = this.generateSortedArr.bind(this);
+        this.ctx = ctx;
+        this.canvasEle = canvasEle;
+        this.generateSortedArr = this.generateSortedArr.bind(this);
 
-      // PLACE THE CUPS ON CANVAS
-      this.numCups = 10;
-      this.ctx.translate(0, 100);
-      this.placeCups(this.ctx, this.canvasEle);
-      this.ctx.translate(-850, 50);
-      this.placeCups(this.ctx, this.canvasEle);
-      this.ctx.translate(-500, -650);
-      this.ctx.restore();
+        // PLACE THE CUPS ON CANVAS
+        this.numCups = 10;
+        this.ctx.translate(0, 100);
+        this.placeCups(this.ctx, this.canvasEle);
+        this.ctx.translate(-850, 50);
+        this.placeCups(this.ctx, this.canvasEle);
+        this.ctx.translate(-500, -650);
+        this.ctx.restore();
 
-      // PLACE THE BEANS ON CANVAS
-      this.placeBeans(this.ctx, this.canvasEle, 372);
-      this.placeBeans(this.ctx, this.canvasEle, 630);
+        // PLACE THE BEANS ON CANVAS
+        this.placeBeans(this.ctx, this.canvasEle, 372);
+        this.placeBeans(this.ctx, this.canvasEle, 630);
 
-      // GENERATE A SORTED ARRAY OF RANDOM NUMBERS FROM 0 TO 99
-      const currentSortedArr = this.generateSortedArr(12);
+        // GENERATE A SORTED ARRAY OF RANDOM NUMBERS FROM 0 TO 99
+        const currentSortedArr = this.generateSortedArr(12);
 
-      // PLACE NUMBERS FROM SORTED ARRAY ONTO BEANS
-      setTimeout(() => {
+        // PLACE NUMBERS FROM SORTED ARRAY ONTO BEANS
+        setTimeout(() => {
             this.placeBeanNums1(currentSortedArr, 396);
             this.placeBeanNums2(currentSortedArr, 657);
-      }, 500);
+        }, 500);
 
-      // PLACE NUMBERS ON CUPS
-      this.placeCupNums1(445);
-      this.placeCupNums2(697);
+        // PLACE NUMBERS ON CUPS
+        this.placeCupNums1(445);
+        this.placeCupNums2(697);
 
-      // SUBMIT BUTTON CLICK HANDLER: GRAB USER INPUT NUMBER
-      let targetButton = document.getElementById("submit-button");
-      targetButton.onclick = (e) => {
+        // SUBMIT BUTTON CLICK HANDLER: GRAB USER INPUT NUMBER
+        let targetButton = document.getElementById("submit-button");
+
+        targetButton.onclick = (e) => {
             e.preventDefault();
             
             let userTargetNum = Number(document.getElementById("user-target-num").value); //converts input string to number
-
             
                 if (Number.isNaN(userTargetNum)) { //WHEN NON-NUMBERS/NaN IS SUBMITTED 
-                  userTargetNum = "Invalid Target Number submitted.";
-                  console.log(userTargetNum);
+                    userTargetNum = "Invalid Target Number submitted.";
+                    console.log(userTargetNum);
                 } else {
-                    const biggoLeft = new BiggoLeft(
-                        this.ctx,
-                        this.canvasEle
-                    );
+                    let currentTargetNum = userTargetNum;
+                    const biggoLeft = new BiggoLeft(this.ctx, this.canvasEle);
                     biggoLeft.moveLeft();
-                    const biggoRight = new BiggoRight(
-                        this.ctx,
-                        this.canvasEle
-                    );
+                    const biggoRight = new BiggoRight(this.ctx, this.canvasEle);
                     setTimeout(() => {
                         biggoRight.moveRight();
                     }, 4500);
+
+                    // const randomTargetNum = this.selectRandEle(currentSortedArr); //to implement a random target number button in the future
+
+                    this.drawRandEle(
+                        "Biggo is currently searching for this bean (target number): Bean " +
+                        currentTargetNum +
+                        ".",
+                        -330,
+                        140
+                    );
+
+                        //Actually use bSearch on array and user's current target num if they submitted an actual number
+                    const answerIndex = this.binarySearch(
+                        currentSortedArr,
+                        currentTargetNum
+                    );
+
+                    // front-facing biggo appears in front of correct answer index/bean/cup
+                    const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
+                    setTimeout(() => {
+                        biggoFront.drawBiggoFront(answerIndex);
+                    }, 9000);
+
+                    // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
+                    this.drawRandEle(
+                        "Which cup (index position) houses Bean " +
+                        currentTargetNum +
+                        "?",
+                        -330,
+                        167
+                    );
+
+                    setTimeout(() => {
+                        this.drawRandEle(
+                        "Answer: Cup " + answerIndex + ".",
+                        340,
+                        167
+                        );
+                    }, 9000);
+
+                    // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUAL ARRAY AT TOP.
                 }
 
 
 
-      };
+        };
 
-      const currentTargetNum = this.selectRandEle(currentSortedArr);
-      this.drawRandEle(
-        "Biggo is currently searching for this bean (target number): Bean " +
-          currentTargetNum +
-          ".",
-        -330,
-        140
-      );
-
-      const answerIndex = this.binarySearch(currentSortedArr, currentTargetNum);
-
-      // front-facing biggo appears in front of correct answer index/bean/cup
-      const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
-            setTimeout(() => {
-              biggoFront.drawBiggoFront(answerIndex);
-            }, 9000);
-      // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
-      this.drawRandEle(
-        "Which cup (index position) houses Bean " + currentTargetNum + "?",
-        -330,
-        167
-      );
-
-      setTimeout(() => {
-        this.drawRandEle("Answer: Cup " + answerIndex + ".", 340, 167);
-      }, 9000);
-
-      // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUALY ARRAY AT TOP.
+        
     }
 
-    play() {
-        //once user clicks button/submit, it will invoke play function
-    }
+
 
     generateSortedArr(num) {
         const sortedArr = [];
@@ -210,7 +217,7 @@ class Cafe {
         // this.ctx.fillText(sortedArray, -280, 160);
 
         console.log(sortedArray);
-        const midIndex = Math.floor(sortedArray.length / 2);
+        const midIndex = Math.floor(sortedArray.length / 2); //For JS, if we half an odd number, it'll return a decimal, so we're using Math.floor to round down to a whole number
 
 
         if (sortedArray[midIndex] === target) {
