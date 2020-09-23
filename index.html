@@ -1,42 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Coffee Corgi</title>
         <link rel="icon" href="src/images/corgi-front-favicon.png" />
         <link rel="stylesheet" href="./dist/main.css" />
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        
+        <meta name="description" content="A demo of the binary search algorithm featuring coffee and corgwn. Made with Javascript, CSS3, and HTML5's Canvas API." />
+        <meta name="keywords" content="coffee corgi, binary search, bsearch, algorithms, javascript project, corgwn, mari kasanuki javascript, marikasanuki, software engineer, software developer" />
+        <meta name="author" content="Mari Kasanuki" />
+        
+        <meta property='og:title' content='Coffee Corgi' />
+        <meta property='og:image' content='https://ingenious-prod.s3.amazonaws.com/portfolio-images/coffee-corgi-linkedin.png' />
+        <meta property='og:description'
+        content="A demo of the binary search algorithm featuring coffee and corgwn. Made with Javascript, CSS3, and HTML5's Canvas API." />
+        <meta property='og:url' content='http://marikasanuki.com/coffeecorgi/' />
+        <meta property="og:site_name" content="Coffee Corgi" />
+        <meta property="og:type" content="website" />
+        
+        <title>Coffee Corgi</title>
 
     </head>
 
     <body>
+
+        <div id="modal">
+            <div class="modal-inner-cont">
+                <p><b>What is binary search?</b></p>
+                <p>Binary search is an algorithm that finds the index position of a target number within a <i>sorted</i> array of numbers.
+                <br><br>
+                <b>How does binary search work?</b>
+                <br>
+                A basic binary search function takes in a sorted array of integers and a target number that you are trying to locate
+                within the array. It will return the index of the target number if the array contains it.
+                <br><br>
+                <p><b>Why binary search?</b></p>
+                <p class="break" >
+                    The benefit of this algorithm is its speed at narrowing down which half of the array contains the target number.
+                    Therefore, as the input size—the length of the array that is being searched—grows, the time it takes to check for
+                    and locate the target number is more time efficient than a linear search of the array (which would check one number
+                    in the array at a time until it happens upon the target number).
+                    <br><br>
+                    Binary search's divide and conquer approach has a worst-case-scenario time complexity of <a target="_blank"
+                        href="https://www.bigocheatsheet.com/">O(log n) (logarithmic)</a>.
+                </p>
+                <b>For an array sorted from smallest to largest a binary search function will:  </b>
+                <br>
+                <br>
+                1) Identify the midpoint number that is located in the middle of the sorted array.
+                <br><br>
+
+                2) Compare that midpoint number with the target number it is trying to locate.
+                <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    a) If the midpoint number IS the target number:
+                    <br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The function returns the index of that number.
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    b) If the midpoint number is LARGER than the target number:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The function starts over with the left half of the array.
+                    <!-- because we know that the target is smaller than any number that comes after the midpoint number (since the array is sorted) -->
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    c) If the midpoint number is SMALLER than the target number:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The function starts over with the right half of the array.
+                </p>
+                <br>
+                <p><a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">View JavaScript code example »</a>
+                    <!-- &nbsp;&nbsp;|&nbsp;&nbsp; <a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">Ruby code »</a> -->
+                </p>
+
+
+                <span id="close-modal-icon">
+                    <i class="far fa-times-circle"></i>
+                </span>
+            </div>
+        </div>
+
+
         <div class="hed-container" >
             <div class="hed">Coffee Corgi</div>
             <img class="bean-img" src="src/images/bean-paw-3.png" alt="coffee beans">
         </div>
         <div class="subhed" >A demo of the binary search algorithm</div>
-        <div class="cup-container">
-            <img class="cup-img" src="src/images/corgi-mug-s.png" alt="coffee corgi">
+        <div class="portfolio-cont">
+            <a href="https://marikasanuki.com/" target="_blank"><span class="portfolio-icon"><i class="fas fa-user"></i></span></a>
+            <a href="https://github.com/marikasanuki/coffeecorgi" target="_blank"> <span class="portfolio-icon"><i
+                        class="fab fa-github"></i></span> </a>
+            <a href="https://www.linkedin.com/in/marikasanuki/" target="_blank"><span class="portfolio-icon"><i
+                        class="fab fa-linkedin"></i></span></a>
+            <span class="portfolio-icon-byline"><a href="https://marikasanuki.com/" target="_blank">Developed by Mari Kasanuki</a></span>
         </div>
-        
-
-        <form id="target-num-form">
-            <label class="target-num-label">Select a bean id (target number) from the menu</label>
-            <input type="text" id="user-target-num" maxlength="2" placeholder="15" >
-            <Button id="submit-button" >Submit</Button>
-        </form>
-        <!-- <i class="fab fa-github"></i> -->
-<!-- 
-        <div class="modal" >
-
-
-            <div id="close-modal">
-                <i class="far fa-times-circle"></i>
-            </div>
+        <!-- <div class="cup-container">
+            <img class="cup-img" src="src/images/corgi-mug-s.png" alt="coffee corgi">
         </div> -->
-        <canvas id="cc-cafe" width="100%" height="100%" ></canvas>
+
+        <!-- onsubmit="return getTargetNum();" -->
+        <div class="directions-cont">
+            <form id="target-num-form"  >
+                <label class="target-num-label">Enter the number of a Bean (the target number) for Biggo to locate:</label>
+                <input 
+                    id="user-target-num" 
+                    type="text"
+                    maxlength="2"
+                > 
+                <!--
+                    type="number"
+                    min="0"
+                    max="99"
+                    maxlength="2" 
+                    placeholder="##"
+                -->
+                <Button id="submit-button">Submit</Button>
+            </form>
+            <span id="open-modal-icon">WHAT'S BINARY SEARCH&nbsp;<i class="fas fa-question-circle"></i> </span>
+        </div>
+
+        <div class="outer-cont">
+            <canvas id="cc-cafe" width="100%" height="100%" style="font-family: Rubik; font-size: 18px;"></canvas>
+            <div class="instructions-cont">
+
+                ○ In this demo, numbered coffee cups represent an array.<br>
+                ○ Each cup has a number that corresponds with an index position. <br>
+                ○ Numbered coffee beans represent the numbers housed in the array.
+                <br><br>
+                <b style="text-align: center;">INSTRUCTIONS</b>
+                <br>
+                1) Pick a bean (target number) from the menu, type its number in the input field, and click the Submit button.
+                <br><br>
+                2) Watch as Biggo the B-Search Dog identifies the cup that contains the bean.
+            </div>
+        </div>
         <script src="./dist/main.js"></script>
         <script src="https://kit.fontawesome.com/5dde6e4e90.js" crossorigin="anonymous"></script>
 

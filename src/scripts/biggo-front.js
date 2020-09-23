@@ -52,7 +52,7 @@ class BiggoFront {
         if (idx === 0) {
             let x = -310;
             let y = 200;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -61,7 +61,7 @@ class BiggoFront {
         } else if (idx === 1) {
             let x = -165;
             let y = 200;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -70,7 +70,7 @@ class BiggoFront {
         } else if (idx === 2) {
             let x = -15;
             let y = 200;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -79,7 +79,7 @@ class BiggoFront {
         } else if (idx === 3) {
             let x = 135;
             let y = 200;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -88,7 +88,7 @@ class BiggoFront {
         } else if (idx === 4) {
             let x = 285;
             let y = 200;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -97,7 +97,7 @@ class BiggoFront {
         } else if (idx === 5) {
             let x = 435;
             let y = 200;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -106,7 +106,7 @@ class BiggoFront {
         } else if (idx === 6) {
             let x = -310;
             let y = 459;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -115,7 +115,7 @@ class BiggoFront {
         } else if (idx === 7) {
             let x = -165;
             let y = 459;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -124,7 +124,7 @@ class BiggoFront {
         } else if (idx === 8) {
             let x = -15;
             let y = 459;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -133,7 +133,7 @@ class BiggoFront {
         } else if (idx === 9) {
             let x = 135;
             let y = 459;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -142,7 +142,7 @@ class BiggoFront {
         } else if (idx === 10) {
             let x = 285;
             let y = 459;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
@@ -151,7 +151,7 @@ class BiggoFront {
         } else if (idx === 11) {
             let x = 435;
             let y = 459;
-            let biggoFrontNPath = "src/images/corgi-front-tongue.png";
+            let biggoFrontNPath = "src/images/corgi-front-neutral.png";
             let biggoFrontN = new Image();
             biggoFrontN.src = biggoFrontNPath;
             biggoFrontN.onload = () => {
