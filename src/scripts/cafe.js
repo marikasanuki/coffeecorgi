@@ -36,12 +36,20 @@ class Cafe {
         this.placeCupNums1(445);
         this.placeCupNums2(697);
 
+        // RESET ARRAY BUTTON CLICK HANDLER
+        // resetButton.onclick = (e) => {
+        //     e.preventDefault();
+        //     this.ctx.clearRect(0, 0, 500, 500);
+        // };
+
         // SUBMIT BUTTON CLICK HANDLER: GRAB USER INPUT NUMBER
         let targetButton = document.getElementById("submit-button");
 
         targetButton.onclick = (e) => {
             e.preventDefault();
             
+            targetButton.disabled = true; //CAN'T CLICK SUBMIT BUTTON MORE THAN ONCE
+
             let userTargetNum = Number(document.getElementById("user-target-num").value); //converts input string to number
             
                 if (Number.isNaN(userTargetNum)) { //WHEN NON-NUMBERS/NaN IS SUBMITTED 
@@ -94,6 +102,9 @@ class Cafe {
                         167
                         );
                     }, 9000);
+
+                    
+
 
                     // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUAL ARRAY AT TOP.
                 }
