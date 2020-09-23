@@ -46,71 +46,62 @@ class Cafe {
         let targetButton = document.getElementById("submit-button");
 
         targetButton.onclick = (e) => {
-            e.preventDefault();
-            
-            targetButton.disabled = true; //CAN'T CLICK SUBMIT BUTTON MORE THAN ONCE
+          e.preventDefault();
 
-            let userTargetNum = Number(document.getElementById("user-target-num").value); //converts input string to number
-            
-                if (Number.isNaN(userTargetNum)) { //WHEN NON-NUMBERS/NaN IS SUBMITTED 
-                    userTargetNum = "Invalid Target Number submitted.";
-                    console.log(userTargetNum);
-                } else {
-                    let currentTargetNum = userTargetNum;
-                    const biggoLeft = new BiggoLeft(this.ctx, this.canvasEle);
-                    biggoLeft.moveLeft();
-                    const biggoRight = new BiggoRight(this.ctx, this.canvasEle);
-                    setTimeout(() => {
-                        biggoRight.moveRight();
-                    }, 4500);
+          targetButton.disabled = true; //CAN'T CLICK SUBMIT BUTTON MORE THAN ONCE
 
-                    // const randomTargetNum = this.selectRandEle(currentSortedArr); //to implement a random target number button in the future
+          let userTargetNum = Number(
+            document.getElementById("user-target-num").value
+          ); //converts input string to number
 
-                    this.drawRandEle(
-                        "Biggo is currently searching for this bean (target number): Bean " +
-                        currentTargetNum +
-                        ".",
-                        -330,
-                        140
-                    );
+          let currentTargetNum = userTargetNum;
+          const biggoLeft = new BiggoLeft(this.ctx, this.canvasEle);
+          biggoLeft.moveLeft();
+          const biggoRight = new BiggoRight(this.ctx, this.canvasEle);
+          setTimeout(() => {
+            biggoRight.moveRight();
+          }, 4500);
 
-                        //Actually use bSearch on array and user's current target num if they submitted an actual number
-                    const answerIndex = this.binarySearch(
-                        currentSortedArr,
-                        currentTargetNum
-                    );
+          // const randomTargetNum = this.selectRandEle(currentSortedArr); //to implement a random target number button in the future
 
-                    // front-facing biggo appears in front of correct answer index/bean/cup
-                    const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
-                    setTimeout(() => {
-                        biggoFront.drawBiggoFront(answerIndex);
-                    }, 9000);
+          //Actually use bSearch on array and user's current target num if they submitted an actual number
+          const answerIndex = this.binarySearch(
+            currentSortedArr,
+            currentTargetNum
+          );
 
-                    // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
-                    this.drawRandEle(
-                        "Which cup (index position) houses Bean " +
-                        currentTargetNum +
-                        "?",
-                        -330,
-                        167
-                    );
+          if (answerIndex === undefined || Number.isNaN(answerIndex) ) {
+                //WHEN NON-NUMBERS/NaN IS SUBMITTED
+                console.log("Input not found in array.");
+                setTimeout(() => {
+                    this.drawRandEle("Biggo searched, but did not find the input " + document.getElementById("user-target-num").value + ".", -90, 167);
+                }, 9000);
 
-                    setTimeout(() => {
-                        this.drawRandEle(
-                        "Answer: Cup " + answerIndex + ".",
-                        340,
-                        167
-                        );
-                    }, 9000);
+          } else {
+                this.drawRandEle(
+                    "Biggo is currently searching for this bean (target number): Bean " +
+                    currentTargetNum +
+                    ".",
+                    -330,
+                    140
+                );
+          
+          // this.drawRandEle("Answer: Which index houses the target number (Bean " + currentTargetNum + ")? Cup " + answerIndex + ".", -330, 196);
+          this.drawRandEle(
+            "Which cup (index position) houses Bean " + currentTargetNum + "?",
+            -330,
+            167
+          );
 
-                    
+            // front-facing biggo appears in front of correct answer index/bean/cup
+            const biggoFront = new BiggoFront(this.ctx, this.canvasEle);
+            setTimeout(() => {
+              biggoFront.drawBiggoFront(answerIndex);
+              this.drawRandEle("Answer: Cup " + answerIndex + ".", 340, 167);
+            }, 9000);
 
-
-                    // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUAL ARRAY AT TOP.
-                }
-
-
-
+            // this.drawSortedArray(currentSortedArr, -130, 195); //CODE FOR SHOWING ACTUAL ARRAY AT TOP.
+          }
         };
 
         
