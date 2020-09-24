@@ -30,22 +30,24 @@
         <div id="modal">
             <div class="modal-inner-cont">
                 <p><b>What is binary search?</b></p>
-                <p>Binary search is an algorithm that finds the index position of a target number within a <i>sorted</i> array of numbers.
-                <br><br>
-                <b>How does binary search work?</b>
-                <br>
-                A basic binary search function takes in a sorted array of integers and a target number that you are trying to locate
-                within the array. It will return the index of the target number if the array contains it.
+                <p>Binary search is an algorithm that finds the index position of a target number within a <i>sorted</i> array of numbers using a divide and conquer approach.
                 <br><br>
                 <p><b>Why binary search?</b></p>
-                <p class="break" >
-                    The benefit of this algorithm is its speed at narrowing down which half of the array contains the target number.
-                    Therefore, as the input size—the length of the array that is being searched—grows, the time it takes to check for
-                    and locate the target number is more time efficient than a linear search of the array (which would check one number
-                    in the array at a time until it happens upon the target number).
+                <p >
+                    The benefit of this algorithm is its speed at narrowing down which half of the array contains the target number. Therefore, as the input size—the length of the array that is being searched—grows, the time it takes to check for and locate the target number is more time efficient than a linear search of the array (which would check one number in the array at a time until it happens upon the target number).
                     <br><br>
-                    Binary search's divide and conquer approach has a worst-case-scenario time complexity of <a target="_blank"
-                        href="https://www.bigocheatsheet.com/">O(log n) (logarithmic)</a>.
+                    Binary search has <a target="_blank" href="https://www.bigocheatsheet.com/" class="hyperlink">a logarithmic time complexity</a>, or O(log n).
+                </p>
+                <br>
+                <b>How does binary search work?</b>
+                <p >
+                A basic binary search function takes in a sorted array of integers and a target number that you are trying to locate
+                within the array. It will return the index of the target number if the array contains it.</p>
+                <br>
+                <p class="break" >
+                    <a target="_blank" class="hyperlink" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">View a recursive JavaScript function 
+                        example »</a>
+                    <!-- &nbsp;&nbsp;|&nbsp;&nbsp; <a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">Ruby code »</a> -->
                 </p>
                 <b>For an array sorted from smallest to largest a binary search function will:  </b>
                 <br>
@@ -66,19 +68,17 @@
                     b) If the midpoint number is LARGER than the target number:
                     <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    The function starts over with the left half of the array.
+                    The function recursively calls itself on the left half of the array and continues until the target is found and its index is returned or there are no more numbers in the array to search.
                     <!-- because we know that the target is smaller than any number that comes after the midpoint number (since the array is sorted) -->
                     <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     c) If the midpoint number is SMALLER than the target number:
                     <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    The function starts over with the right half of the array.
+                    The function recursively calls itself on the right half of the array and continues until the target is found and its index is returned or there are no more numbers in the array to search.
+
                 </p>
-                <br>
-                <p><a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">View JavaScript code example »</a>
-                    <!-- &nbsp;&nbsp;|&nbsp;&nbsp; <a target="_blank" href="https://gist.github.com/marikasanuki/c6d3a96aba13fb8033de3f5020ef2214">Ruby code »</a> -->
-                </p>
+
 
 
                 <span id="close-modal-icon">
