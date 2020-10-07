@@ -5,7 +5,7 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
 ## 1. Background and Overview 
 
 * Biggo will go investigate the mid-index cup and determine if the target coffee bean id # is smaller than, equal to, or larger than the bean contained in the cup. 
-* Based on that result, Biggo will either repeat the process on the left half or right half; if it's equal Biggo will fetch the bean and return it to the user!
+* Based on that result, Biggo will either repeat the process on the left half or right half; if it's equal Biggo will fetch the bean and return it to the user.
 
 ### Notable elements:
 * coffee bean id # (uses any numbers but must be sorted from small to large)
@@ -29,15 +29,11 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
     [ ] Basic explanation of Binary Search requirements
     [ ] Code example in JS
 
-    1) drew cups as an execise in Canvas / SVGs
-    2) Use canvas to animate the running Corgis
+    1) Draw cups with Canvas / SVGs
+    2) Use Canvas to animate the running corgwyn
 
 
-## 3. Wireframes 
-![](src/images/coffee-corgi-wireframe.png)
-
-
-## 4. Architecture and Technology 
+## 3. Architecture and Technology 
 
 * Pure JavaScript
 * HTML5 Canvas
@@ -45,7 +41,7 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
 * Webpack
 
 
-## 5. Implementation Timeline 
+## 6. Implementation Timeline 
 
 ### Stage 1
 * Research on Canvas and D3.js
