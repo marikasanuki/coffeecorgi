@@ -41,7 +41,7 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
 * Webpack
 
 
-## 6. Implementation Timeline 
+## 4. Implementation Timeline 
 
 ### Stage 1
 * Research on Canvas and D3.js
@@ -65,5 +65,7 @@ Biggo the B-Search Dog will parse through the coffee beans (sorted by bean id #)
 * Final styling
 * Production README
 
-## 6. (Bonus Features) 
+## 5. Future Features
+* Option to clear and run new search
+* Cups disappear as search narrows
 * Easter egg button
